@@ -2,7 +2,7 @@ package com.alessandrochelo;
 import java.util.Scanner;
 
 public class GestioneUtenti {
-    Scanner scan =null;
+    Scanner scan = null;
     public GestioneUtenti(Scanner scanner)
     {
       this.scan = scanner;
@@ -34,11 +34,12 @@ public class GestioneUtenti {
     {
         System.out.println(" Digita 1 per inserisre un libro, 2 per modificare, 3 per eliminare");
         int c = scanner.nextInt();
+        scanner.nextLine(); // Consuma il newline lasciato da nextInt()
         Amministratore amministratore1 = new Amministratore();
 
         if(c == 1)
         {
-           amministratore1.inserisci();
+           amministratore1.inserisci(scanner);
         }
         if (c == 2) 
         {

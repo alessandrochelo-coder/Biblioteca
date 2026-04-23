@@ -2,6 +2,7 @@ package com.alessandrochelo;
 
 import com.alessandrochelo.gson.Catalogo;
 import com.alessandrochelo.gson.Libro;
+import com.alessandrochelo.utils.Utils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -19,9 +20,11 @@ public class Utente {
      //Scanner scan = new Scanner(System.in);
     Libro libroConStatoPrestitoAggiornato;
     Map<Integer, Libro> mappaLibriAggiornata;
+    Utils utils;
+
     public Utente()
     {
-         
+         this.utils = new Utils();
     }
 
     public void visualizzaElenco (Libreria lib)
@@ -47,32 +50,34 @@ public class Utente {
             libroConStatoPrestitoAggiornato = mappaLibriAggiornata.get(b);
             libroConStatoPrestitoAggiornato.Presta();
 
-            //da hash ottenere lista<Libro>
-            List<Libro> listaLibriAggiornata = new ArrayList<>();
+            utils.caricaMappa(mappaLibriAggiornata);
+            //utils.caricaMappa( mappaLibriAggiornata);
+            // //da hash ottenere lista<Libro>
+            // List<Libro> listaLibriAggiornata = new ArrayList<>();
             
-            for ( Libro libroDaMappa : mappaLibriAggiornata.values()) 
-                {
-                   listaLibriAggiornata.add(libroDaMappa);
-                }
+            // for ( Libro libroDaMappa : mappaLibriAggiornata.values()) 
+            //     {
+            //        listaLibriAggiornata.add(libroDaMappa);
+            //     }
                 
-            // creare catalogo aggiornato con dentro la lista<Libro>
-             Catalogo catalogoAggiornato = new Catalogo();
-             catalogoAggiornato.setLista(listaLibriAggiornata);
-            //Usi il catalogo per aggiornare il json con la libreria GSON
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            // // creare catalogo aggiornato con dentro la lista<Libro>
+            //  Catalogo catalogoAggiornato = new Catalogo();
+            //  catalogoAggiornato.setLista(listaLibriAggiornata);
+            // //Usi il catalogo per aggiornare il json con la libreria GSON
+            // Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
 
-            try (FileWriter writer = new FileWriter("C:\\\\Java-workspace\\\\libreria\\\\src\\\\main\\\\java\\\\com\\\\alessandrochelo\\\\Libreria.json")) 
-            {
-                gson.toJson(catalogoAggiornato, writer);
-            }catch (IOException e)
-            {
-            e.printStackTrace();
-            }
-            //riguardare il javadoc del 1 giorno della libreria GSON per vedere se esiste il metofo toJson
-            //da capire come usarlo per aggiornare il file Libreria.json
+            // try (FileWriter writer = new FileWriter("C:\\\\Java-workspace\\\\libreria\\\\src\\\\main\\\\java\\\\com\\\\alessandrochelo\\\\Libreria.json")) 
+            // {
+            //     gson.toJson(catalogoAggiornato, writer);
+            // }catch (IOException e)
+            // {
+            // e.printStackTrace();
+            // }
         }
     }
+    
+    
     
     public void restituzione(Libreria lib, Scanner scanner)
     {
@@ -89,27 +94,34 @@ public class Utente {
         {
             libroConStatoPrestitoAggiornato = mappaLibriAggiornata.get(d);
             libroConStatoPrestitoAggiornato.Restituisci();
-
-             List<Libro> listaLibriAggiornata = new ArrayList<>();
             
-            for ( Libro libroDaMappa : mappaLibriAggiornata.values()) 
-                {
-                   listaLibriAggiornata.add(libroDaMappa);
-                }
+            utils.caricaMappa(mappaLibriAggiornata);
 
-            Catalogo catalogoAggiornato = new Catalogo();
-            catalogoAggiornato.setLista(listaLibriAggiornata);
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            //  List<Libro> listaLibriAggiornata = new ArrayList<>();
+            
+            // for ( Libro libroDaMappa : mappaLibriAggiornata.values()) 
+            //     {
+            //        listaLibriAggiornata.add(libroDaMappa);
+            //     }
+ 
+            // Catalogo catalogoAggiornato = new Catalogo();
+            // catalogoAggiornato.setLista(listaLibriAggiornata);
+            // Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-            try (FileWriter writer = new FileWriter("C:\\\\Java-workspace\\\\libreria\\\\src\\\\main\\\\java\\\\com\\\\alessandrochelo\\\\Libreria.json")) 
-            {
-                gson.toJson(catalogoAggiornato, writer);
-            }catch (IOException e)
-            {
-            e.printStackTrace();
-            }
+            // try (FileWriter writer = new FileWriter("C:\\\\Java-workspace\\\\libreria\\\\src\\\\main\\\\java\\\\com\\\\alessandrochelo\\\\Libreria.json")) 
+            // {
+            //     gson.toJson(catalogoAggiornato, writer);
+            // }catch (IOException e)
+            // {
+            // e.printStackTrace();
+            // }
 
         }
+        
+    }
+
+    public void scriviSuJson ()
+    {
         
     }
 }
