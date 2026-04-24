@@ -2,21 +2,27 @@
   "libri": [
     {
       "autore": "Bram Stoker",
-      "titolo": "Frankenstein",
+      "titolo": "Dracula",
       "id": 1,
       "inPrestito": false
     },
     {
-      "autore": "Tolkien",
-      "titolo": "Il sigonre degli anelli",
+      "autore": "J.R.R. Tolkien",
+      "titolo": "Il Signore degli Anelli",
       "id": 2,
       "inPrestito": true
     },
     {
-      "autore": "Umberto Eco",
-      "titolo": "Il nome della rosa",
+      "autore": "George Orwell",
+      "titolo": "1984",
       "id": 3,
-      "inPrestito": true
+      "inPrestito": false
+    },
+    {
+      "autore": "Dmitry",
+      "titolo": "Metro 2033",
+      "id": 4,
+      "inPrestito": false
     }
   ]
 }

@@ -43,7 +43,7 @@ public class GestioneUtenti {
         }
         if (c == 2) 
         {
-           amministratore1.modifica();
+           amministratore1.modifica(scanner);
         }
         if(c == 3)
         {
