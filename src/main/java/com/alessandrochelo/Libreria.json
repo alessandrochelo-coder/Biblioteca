@@ -1,27 +1,15 @@
 {
   "libri": [
     {
-      "autore": "Bram Stoker",
-      "titolo": "Dracula",
-      "id": 1,
-      "inPrestito": false
-    },
-    {
-      "autore": "J.R.R. Tolkien",
-      "titolo": "Il Signore degli Anelli",
+      "autore": "George R.R. Martin",
+      "titolo": "Il Trono di Spade",
       "id": 2,
       "inPrestito": true
     },
     {
-      "autore": "George Orwell",
-      "titolo": "1984",
+      "autore": "J.R.R. Tolkien",
+      "titolo": "Il Signore degli Anelli",
       "id": 3,
-      "inPrestito": false
-    },
-    {
-      "autore": "Dmitry",
-      "titolo": "Metro 2033",
-      "id": 4,
       "inPrestito": false
     }
   ]

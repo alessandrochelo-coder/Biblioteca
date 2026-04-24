@@ -58,7 +58,7 @@ public class Amministratore {
     {
 
          libreria.leggiJson();
-         
+
          System.out.println("Inserisci id del libro da modificare");
          int id = scanner.nextInt();
             scanner.nextLine(); // Consuma il newline lasciato da nextInt()
@@ -75,9 +75,18 @@ public class Amministratore {
          utils.caricaMappa(mappaLibriAggiornata);
     }
 
-    public void elimina()
+    public void elimina(Scanner scanner)
     {
-         
+         libreria.leggiJson();
+
+         System.out.println("Inserisci id del libro da eliminare");
+         int id = scanner.nextInt();
+         scanner.nextLine(); // Consuma il newline lasciato da nextInt()
+
+        mappaLibriAggiornata = libreria.getElencolibri();
+        mappaLibriAggiornata.remove(id);
+        utils.caricaMappa(mappaLibriAggiornata);
+
     }
     
 }

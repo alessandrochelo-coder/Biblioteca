@@ -47,7 +47,7 @@ public class GestioneUtenti {
         }
         if(c == 3)
         {
-           amministratore1.elimina();
+           amministratore1.elimina(scanner);
         }
     }
 }
