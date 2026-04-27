@@ -6,12 +6,11 @@ public class Libro {
 private String autore;
 private String titolo;
 private int id;
-private boolean inPrestito;
+private int numeroCopie;
     
 public Libro(String autore, String titolo, int codice){
     this.autore = autore;
     this.titolo = titolo;
-    this.inPrestito = false;
     this.id = codice;
 }
 
@@ -23,8 +22,9 @@ public String getTitolo(){
     return titolo;
 }
 
-public boolean isInPrestito(){
-    return inPrestito;
+public int getNumeroCopie()
+{
+    return numeroCopie;
 }
 
 public int getId(){
@@ -33,26 +33,37 @@ public int getId(){
 
 public void Presta()
 {
-    if(!inPrestito)
-        {
-            inPrestito = true;
-            System.out.println(titolo + "- è stato prestato.");
-    }else
-        {
-            System.out.println(titolo + "- è in prestito");
-        }
+    // if(!inPrestito)
+    //     {
+    //         inPrestito = true;
+    //         System.out.println(titolo + "- è stato prestato.");
+    // }else
+    //     {
+    //         System.out.println(titolo + "- è in prestito");
+    //     } 
+
+    if(numeroCopie > 0)
+    {
+        numeroCopie--;
+        System.out.println(titolo + " - è stato prestato.");
+    }else if (numeroCopie == 0)
+    {
+        System.out.println(titolo + " - non è disponibile per il prestito.");
+    }
 }
 
 public void Restituisci()
 {
-    if(inPrestito)
-        { 
-            inPrestito = false;
-            System.out.println(titolo + "- è stato restituito");
-        }else
-        {
-            System.out.println(titolo + "- non è in prestito");
-        }
+    // if()
+    //     { 
+    //         //
+    //         System.out.println(titolo + "- è stato restituito");
+    //     }else
+    //     {
+    //         System.out.println(titolo + "- non è in prestito");
+    //     }
+    numeroCopie++;
+    System.out.println(titolo + " - è stato restituito.");
 }
 
 }

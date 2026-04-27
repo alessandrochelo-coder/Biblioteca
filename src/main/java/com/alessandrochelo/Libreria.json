@@ -1,16 +1,28 @@
 {
   "libri": [
     {
-      "autore": "George R.R. Martin",
-      "titolo": "Il Trono di Spade",
+      "autore": "J.K. Rowling",
+      "titolo": "Harry Potter e la pietra filosofale",
       "id": 2,
-      "inPrestito": true
+      "numeroCopie": 1
     },
     {
-      "autore": "J.R.R. Tolkien",
-      "titolo": "Il Signore degli Anelli",
+      "autore": "J.K. Rowling",
+      "titolo": "Harry Potter e il calice di fuoco",
       "id": 3,
-      "inPrestito": false
+      "numeroCopie": 3
+    },
+    {
+      "autore": "J.K. Rowling",
+      "titolo": "Harry Potter e la camera dei segreti",
+      "id": 4,
+      "numeroCopie": 4
+    },
+    {
+      "autore": "J.K. Rowling",
+      "titolo": "Harry Potter e i doni della morte",
+      "id": 5,
+      "numeroCopie": 8
     }
   ]
 }

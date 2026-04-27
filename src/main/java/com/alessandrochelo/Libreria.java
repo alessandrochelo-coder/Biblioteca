@@ -11,16 +11,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Libreria {
+public class Libreria 
+{
     Map<Integer, Libro> elencolibri = new HashMap<>();
-    public Map<Integer, Libro> getElencolibri() {
-        return elencolibri;
-    }
 
     public Libreria()
     {
 
     }
+
+    public Map<Integer, Libro> getElencolibri() 
+    {
+        return elencolibri;
+    }
+
+    
     
     public void leggiJson()
     {
@@ -29,7 +34,7 @@ public class Libreria {
         try (Reader reader = new FileReader("C:\\Java-workspace\\libreria\\src\\main\\java\\com\\alessandrochelo\\Libreria.json")) 
         {
             // Mappa il JSON a una classe Java specifica
-           Catalogo catalogo = gson.fromJson(reader, Catalogo.class);
+            Catalogo catalogo = gson.fromJson(reader, Catalogo.class);
             System.out.println(catalogo);
             
             //Stampa a video l'oggetto catalogo
@@ -38,7 +43,7 @@ public class Libreria {
             String jsonPretty = gson1.toJson(catalogo);
             //System.out.println(jsonPretty);
             //riempire mappa
-            //ottenre lista libri con getter
+            //ottenere lista libri con getter
             //Iterare lista libri e popolare la mappa
             List<Libro> tmplista = catalogo.getLista();
             
@@ -65,9 +70,9 @@ public class Libreria {
                 Libro libro =  entry.getValue();
                 String titolo = libro.getTitolo();
                 String autore = libro.getAutore();
-                boolean inPrestito = libro.isInPrestito();
+                int numeroCopie = libro.getNumeroCopie();
 
-                System.out.println("Chiave: " + chiave + ", libro: titolo - " + titolo + " autore - "+ autore + "in prestito - " + inPrestito );
+                System.out.println("Chiave: " + chiave + ", libro: titolo - " + titolo + " autore - "+ autore + "in prestito - " + numeroCopie);
              }
     }
 

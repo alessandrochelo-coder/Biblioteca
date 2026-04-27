@@ -1,15 +1,11 @@
 package com.alessandrochelo;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Map;
 import java.util.Scanner;
-import com.alessandrochelo.gson.Catalogo;
+
 import com.alessandrochelo.gson.Libro;
 import com.alessandrochelo.utils.Utils;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+
 
 public class Amministratore {
     
