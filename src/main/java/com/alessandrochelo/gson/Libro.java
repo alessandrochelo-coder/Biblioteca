@@ -12,6 +12,7 @@ public Libro(String autore, String titolo, int codice){
     this.autore = autore;
     this.titolo = titolo;
     this.id = codice;
+    this.numeroCopie = 0;
 }
 
 public String getAutore(){
@@ -46,7 +47,7 @@ public void Presta()
     {
         numeroCopie--;
         System.out.println(titolo + " - è stato prestato.");
-    }else if (numeroCopie == 0)
+    }else if (numeroCopie <= 0)
     {
         System.out.println(titolo + " - non è disponibile per il prestito.");
     }
@@ -64,6 +65,11 @@ public void Restituisci()
     //     }
     numeroCopie++;
     System.out.println(titolo + " - è stato restituito.");
+}
+
+@Override
+public String toString() {
+    return "Titolo: " + titolo + ", Autore: " + autore + ", ID: " + id + ", Numero copie: " + numeroCopie;
 }
 
 }
