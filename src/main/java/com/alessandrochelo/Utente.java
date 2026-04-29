@@ -29,6 +29,8 @@ public class Utente {
         lib.stampaMappa();
     }
 
+    //metodo per prendere in prestito un libro
+
     public void prendiInPrestito(Libreria lib, Scanner scanner)
     {
         System.out.println("Inserisci id del libro");
