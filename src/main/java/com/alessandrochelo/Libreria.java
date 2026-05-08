@@ -34,7 +34,7 @@ public class Libreria
     {
         //"C:\\\\Java-workspace\\\\libreria\\\\src\\\\main\\\\java\\\\com\\\\alessandrochelo\\\\Libreria.json"
         Gson gson = new Gson();
-        System.out.println("Stampa percorso file: " + pass.getPercorsoFile());
+        System.out.println("Lib - Stampa percorso file: " + pass.getPercorsoFile());
         try (Reader reader = new FileReader(pass.getPercorsoFile())) 
         {  
             System.out.println("Percorso del file: " + pass.getPercorsoFile());

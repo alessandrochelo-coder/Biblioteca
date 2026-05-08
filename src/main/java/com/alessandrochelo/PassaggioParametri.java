@@ -11,6 +11,7 @@ public class PassaggioParametri
 
    public void riceviParametro(String[] args)
    {
+      System.out.println("PP - Ricevo n: " + args.length + " parametri da App");
     if (args.length == 1)
      {
         System.out.println("Il percorso del file è: " + args[0]);
