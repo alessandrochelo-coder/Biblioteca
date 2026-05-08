@@ -23,9 +23,9 @@ public class Utente {
          this.utils = new Utils();
     }
 
-    public void visualizzaElenco (Libreria lib)
+    public void visualizzaElenco (Libreria lib, PassaggioParametri pass)
     {
-        lib.leggiJson();
+        lib.leggiJson(pass);
         lib.stampaMappa();
     }
 

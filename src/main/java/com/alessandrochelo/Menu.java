@@ -14,7 +14,7 @@ public class Menu {
        
     }
 
-    public void selezione()
+    public void selezione(PassaggioParametri pass)
     {
         
 
@@ -28,10 +28,10 @@ public class Menu {
         
         if(a == 1)
             {
-                g.utente(lib, scanner);
+                g.utente(lib, scanner, pass);
             }else if (a == 2)
                 {
-                    g.amministratore(a, scanner);
+                    g.amministratore(a, scanner, pass);
                 }
         
         

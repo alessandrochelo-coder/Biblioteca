@@ -12,7 +12,7 @@ public class GestioneUtenti {
     
     
 
-    public void utente(Libreria lib, Scanner scanner)
+    public void utente(Libreria lib, Scanner scanner, PassaggioParametri pass)
     {
          System.out.println("Digita 1 per visualizza l'elenco dei libri o digita 2 per prendere in prestito un libro o 3 per restituire un libro");
          System.out.println("Digita 4 per cercare un libro per titolo o 5 per cercare un libro per autore");
@@ -23,7 +23,7 @@ public class GestioneUtenti {
 
          if(numero == 1)
          {
-            utente1.visualizzaElenco(lib);
+            utente1.visualizzaElenco(lib, pass);
          } 
          if(numero == 2)
          {
@@ -35,16 +35,16 @@ public class GestioneUtenti {
          }
          if(numero == 4)
          {
-            ricerca.ricercaTitolo(scanner);
+            ricerca.ricercaTitolo(scanner, pass);
          }
          if(numero == 5)
          {
-            ricerca.ricercaAutore(scanner);
+            ricerca.ricercaAutore(scanner, pass);
          }
 
     }
 
-    public void amministratore(int numero, Scanner scanner)
+    public void amministratore(int numero, Scanner scanner, PassaggioParametri pass)
     {
         System.out.println(" Digita 1 per inserisre un libro, 2 per modificare, 3 per eliminare");
         int c = scanner.nextInt();
@@ -53,23 +53,23 @@ public class GestioneUtenti {
 
         if(c == 1)
         {
-           amministratore1.inserisci(scanner);
+           amministratore1.inserisci(scanner, pass);
         }
         if (c == 2) 
         {
-           amministratore1.modifica(scanner);
+           amministratore1.modifica(scanner, pass);
         }
         if(c == 3)
         {
-           amministratore1.elimina(scanner);
+           amministratore1.elimina(scanner, pass);
         }
         if(c == 4)
         {
-           ricerca.ricercaTitolo(scanner);
+           ricerca.ricercaTitolo(scanner, pass);
         }
         if(c == 5)
         {
-           ricerca.ricercaAutore(scanner);
+           ricerca.ricercaAutore(scanner, pass);
         }
     }
 }

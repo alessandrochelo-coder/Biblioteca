@@ -11,9 +11,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 public class Libreria 
 {
     Map<Integer, Libro> elencolibri = new HashMap<>();
+
+    
 
     public Libreria()
     {
@@ -27,15 +30,17 @@ public class Libreria
 
     
     
-    public void leggiJson()
+    public void leggiJson(PassaggioParametri pass)
     {
-        
+        //"C:\\\\Java-workspace\\\\libreria\\\\src\\\\main\\\\java\\\\com\\\\alessandrochelo\\\\Libreria.json"
         Gson gson = new Gson();
-        try (Reader reader = new FileReader("C:\\Java-workspace\\libreria\\src\\main\\java\\com\\alessandrochelo\\Libreria.json")) 
-        {
+        System.out.println("Stampa percorso file: " + pass.getPercorsoFile());
+        try (Reader reader = new FileReader(pass.getPercorsoFile())) 
+        {  
+            System.out.println("Percorso del file: " + pass.getPercorsoFile());
             // Mappa il JSON a una classe Java specifica
             Catalogo catalogo = gson.fromJson(reader, Catalogo.class);
-            System.out.println(catalogo);
+            System.out.println("la libreria contiene: " + catalogo.getLista().size() + " libri");
             
             //Stampa a video l'oggetto catalogo
             Gson gson1 = new GsonBuilder().setPrettyPrinting().create();

@@ -16,12 +16,12 @@ public class Ricerca
         
     }
 
-    public void ricercaTitolo(Scanner scanner)
+    public void ricercaTitolo(Scanner scanner, PassaggioParametri pass)
     {
          System.out.println("Inserisci il titolo del libro da cercare");
          String titoloDaCercare = scanner.nextLine(); 
 
-         lib.leggiJson();
+         lib.leggiJson(pass);
          mappaLibriAggiornata = lib.getElencolibri();
 
             for (Libro libro : mappaLibriAggiornata.values()) 
@@ -37,12 +37,12 @@ public class Ricerca
             
     }
 
-    public void ricercaAutore(Scanner scanner)
+    public void ricercaAutore(Scanner scanner, PassaggioParametri pass)
     {
         System.out.println("Inserisci l'autore del libro da cercare");
         String autoreDaCercare = scanner.nextLine(); 
 
-        lib.leggiJson();
+        lib.leggiJson(pass);
         mappaLibriAggiornata = lib.getElencolibri();
 
             for (Libro libro : mappaLibriAggiornata.values()) 

@@ -18,10 +18,10 @@ public class Amministratore {
 
     }
 
-    public void inserisci(Scanner scanner)
+    public void inserisci(Scanner scanner, PassaggioParametri pass)
     {      
         
-        libreria.leggiJson();
+        libreria.leggiJson(pass);
 
         System.out.println("Inserisci il titolo");
         String titolo = scanner.nextLine();
@@ -50,10 +50,10 @@ public class Amministratore {
             utils.caricaMappa(mappaLibriAggiornata);
     }
 
-    public void modifica(Scanner scanner)
+    public void modifica(Scanner scanner, PassaggioParametri pass)
     {
 
-         libreria.leggiJson();
+         libreria.leggiJson(pass);
 
          System.out.println("Inserisci id del libro da modificare");
          int id = scanner.nextInt();
@@ -71,9 +71,9 @@ public class Amministratore {
          utils.caricaMappa(mappaLibriAggiornata);
     }
 
-    public void elimina(Scanner scanner)
+    public void elimina(Scanner scanner, PassaggioParametri pass)
     {
-         libreria.leggiJson();
+         libreria.leggiJson(pass);
 
          System.out.println("Inserisci id del libro da eliminare");
          int id = scanner.nextInt();
